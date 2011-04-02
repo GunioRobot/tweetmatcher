@@ -1,16 +1,14 @@
 {% extends 'layout/base.html' %}
 {% block content %}
 <h1>Authors</h1>
-	<ul>
+
 		{% for author in authors %}
-		<li>{{ author.twitter_username }}</li>
 		<ul>
+		<li class="author">{{ author.twitter_username }}</li>
 		{% for h in author.hashtag_set.all %}
 		<li>{{ h.text }}</li>
 		</ul>
 		{% endfor %}
-		
-	</ul>
 	{% endfor %}
 {% endblock content %}
 </body>

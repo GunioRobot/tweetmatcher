@@ -47,7 +47,8 @@ def fetch(request, username):
 	[author.mention_set.create(name=u) for u in user_mentions if u not in author.mention_set.all()]
 	[author.tweet_set.create(body=t) for t in tweets if t not in author.tweet_set.all()]
 	
-	return render_to_response('main.html',locals())
+	return render_to_response('main.html',context_instance=RequestContext(request,
+	                                                                 locals()))
 	
 
 def authors(request):
@@ -69,7 +70,8 @@ def get_profile(request):
 	else:
 		form = GetProfileForm()
 		context = {'get_profile_form': form}
-		return render_to_response('get_profile.html', context)
+		return render_to_response('get_profile.html', context_instance=RequestContext(request,
+		                                                                 context))
 	
 class GetProfileForm(forms.Form):
 	profile = forms.CharField()	

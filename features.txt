@@ -1,0 +1,25 @@
+Feature: Get relevant non BBC links for twitter user based on their tweet content
+  Given I know a registered Twitter user's profile name
+	When I submit the profile name
+	Then I should see a list of their hashtags and commonly used words
+	And I should see a list of 20 links that have appeared in recent tweets from other people who have the same interests
+
+Feature: Get BBC links for twitter user based on their tweet content
+  Given I know a registered Twitter user's profile name
+	When I submit the profile name
+	Then I should see a list of BBC links relevant to their interests
+
+
+
+TODO validate that profile name sent through form is a registered twitter username
+TODO validate that the profile name has tweets associated with it. If there are fewer than 20 tweets, then relay a message that there isn't enough content to presume interests
+TODO ensure that an author (profile name) can't be added twice to the database
+TODO ensure that a tweet can't be added twice to the database
+TODO create Words model with text.string and an author_id
+
+
+
+Sometime:
+=======
+TODO user can see which of their friends are most similar to their interests
+TODO user can see a tree of connections from a set of their last 20 tweets: scans mentions and then goes and gets last 20 tweets from all mentions, and grabs the mentions in those tweets

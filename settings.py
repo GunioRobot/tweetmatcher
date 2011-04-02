@@ -82,7 +82,7 @@ MIDDLEWARE_CLASSES = (    #
 ROOT_URLCONF = 'tweetmatcher.urls'
 
 TEMPLATE_DIRS = (
-	os.path.join(os.path.dirname(__file__), 'templates').replace('\\','/'),
+    os.path.join(os.path.dirname(__file__), 'templates').replace('\\','/'),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -94,10 +94,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
-	'tweetmatcher.tm',
+    'tweetmatcher.tm',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-	'south',
+    'south',
 )

@@ -6,9 +6,9 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-	(r'^fetch/([A-Za-z0-9_-]{0,20})$', fetch),
-	(r'^authors/$', authors),
-	(r'^$', get_profile),
+    (r'^fetch/([A-Za-z0-9_-]{0,20})$', fetch),
+    (r'^authors/$', authors),
+    (r'^$', get_profile),
     (r'^admin/', include(admin.site.urls)),
 )
 

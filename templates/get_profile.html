@@ -1,5 +1,5 @@
 {% extends 'layout/base.html' %}
 <form action="/fetch/" method="post">{% csrf_token %}
-	{{ get_profile_form.as_p }}
-	<input type="submit" value="Submit" />
+  {{ get_profile_form.as_p }}
+  <input type="submit" value="Submit" />
 </form>

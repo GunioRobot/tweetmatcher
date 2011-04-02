@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>HTML5 boilerplate—all you really need…</title>
+	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/styles.css" />
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body id="home">
+
+
+	<h1>{{ username }}</h1>
+	<ul>
+		{% for tweet in tweets %}
+		<li>{{ tweet }}</li>
+		{% empty %}
+		There are currently no tweets for {{ username }}
+		{% endfor %}
+	</ul>
+	<h1>Hashtags and User Mentions</h1>
+	<ul>
+		{% for hashtag in hashtags %}
+		<li>{{ hashtag }}</li>
+		{% endfor %}
+	</ul>
+	<ul>
+		{% for mention in user_mentions %}
+		<li>{{ mention }}</li>
+		{% endfor %}
+	</ul>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% block header %}
+<header id="header" role="navigation">
+{% include 'layout/header.html' %}
+</header>
+{% endblock %}
+
+<div id="content"{% if content_css_class %} class="{{ content_css_class }}"{% endif %}>
+{% block content %}
+
+<div id="main" role="main">
+{% block content_area %}
+{% endblock %}
+</div>
+
+<br class="clear" />
+{% endblock %}{# end content block #}
+</div>{# /#content #}
+
+<footer id="footer">
+ <div id="footer-contents" role="contentinfo">
+   {% include 'layout/footer.html' %}
+ </div>{# /#footer-contents #}
+</footer>{# /#footer #}
